@@ -1,0 +1,13 @@
+[Unit]
+Description=Load bbswitch and set NVIDIA GPU off at boot
+After=systemd-modules-load.service
+Before=bumblebeed.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe bbswitch load_state=1 unload_state=1 skip_optimus_dsm=0
+ExecStartPost=/bin/bash -c 'echo OFF > /proc/acpi/bbswitch'
+
+[Install]
+WantedBy=multi-user.target

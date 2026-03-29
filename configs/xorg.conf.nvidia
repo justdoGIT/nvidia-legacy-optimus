@@ -1,0 +1,16 @@
+Section "ServerLayout"
+    Identifier  "BumblebeeLayout"
+    Option      "AutoAddDevices" "false"
+    Option      "AutoAddGPU"     "false"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    BusID       "PCI:1:0:0"
+    Option      "ProbeAllGpus"    "false"
+    Option      "NoLogo"          "true"
+    Option      "UseEDID"         "false"
+    Option      "UseDisplayDevice" "none"
+    Option      "HardDPMS"        "false"
+EndSection
