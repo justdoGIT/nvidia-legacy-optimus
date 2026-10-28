@@ -15,5 +15,6 @@ jobs:
   performance:
     uses: http://lenovo.local:3000/justdoGIT/ci-templates/.forgejo/workflows/reusable-performance.yml@7e453d404a02e979c348b8aa5403cc03472ca098
     with:
+      runner_label: ci-standard
       templates_ref: 7e453d404a02e979c348b8aa5403cc03472ca098
       seed_baseline: ${{ github.event_name == 'workflow_dispatch' && inputs.seed_baseline }}
